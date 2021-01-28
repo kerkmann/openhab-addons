@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="jura"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Sample Thing Type -->
+	<thing-type id="e60">
+		<label>JURA Binding Thing</label>
+		<description>Sample thing for JURA Binding</description>
+
+		<channels>
+			<channel id="power" typeId="powerSwitch"/>
+			<channel id="brewCoffee" typeId="switch"/>
+			<channel id="cupsCoffee" typeId="cups"/>
+			<channel id="cupsEspresso" typeId="cups"/>
+		</channels>
+
+		<config-description>
+			<parameter name="host" type="text" required="true">
+				<context>String</context>
+				<label>Sample Parameter</label>
+				<description>This is a sample text configuration parameter</description>
+			</parameter>
+		</config-description>
+
+	</thing-type>
+
+	<channel-type id="cups">
+		<item-type>Number</item-type>
+		<label>Number of cups.</label>
+		<description>The amount of brewed cups.</description>
+		<state readOnly="true" pattern="%d"/>
+	</channel-type>
+
+	<channel-type id="powerSwitch">
+		<item-type>Switch</item-type>
+		<label>TODO</label>
+		<description>TODO</description>
+		<state readOnly="false"/>
+	</channel-type>
+
+	<channel-type id="switch">
+		<item-type>Switch</item-type>
+		<label>TODO</label>
+		<description>TODO</description>
+		<state readOnly="false"/>
+	</channel-type>
+</thing:thing-descriptions>
